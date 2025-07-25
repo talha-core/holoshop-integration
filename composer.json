@@ -1,0 +1,33 @@
+{
+    "name": "holoshop/integration",
+    "type": "library",
+    "require": {
+        "php": "^7.3 || ^8.1"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.84",
+        "phpstan/phpstan": "^2.1",
+        "rector/rector": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Holoshop\\Integration\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Talha Amir",
+            "email": "124266517+talha-core@users.noreply.github.com"
+        }
+    ],
+    "scripts": {
+        "php-cs-fixer": "vendor/bin/php-cs-fixer fix --ansi --verbose --config=.php-cs-fixer.dist.php",
+        "phpstan": "vendor/bin/phpstan --configuration=phpstan.dist.neon --memory-limit=2G",
+        "rector": "vendor/bin/rector process",
+        "cq": [
+            "@php-cs-fixer",
+            "@phpstan",
+            "@rector"
+        ]
+    }
+}
